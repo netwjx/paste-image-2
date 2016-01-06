@@ -8,7 +8,7 @@
       "package",
       "markdown"
   ],
-  "repository": "https://github.com/atom/paste-image-2",
+  "repository": "https://github.com/netwjx/paste-image-2",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
