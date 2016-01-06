@@ -1,0 +1,21 @@
+{
+  "name": "paste-image-2",
+  "main": "./lib/paste-image-2",
+  "version": "0.1.0",
+  "description": "Paste image to markdown, to html, to xxx",
+  "keywords": [
+      "atom",
+      "package",
+      "markdown"
+  ],
+  "repository": "https://github.com/atom/paste-image-2",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "dateformat": "^1.0.12",
+    "text-buffer": "^8.1.4"
+  }
+}
