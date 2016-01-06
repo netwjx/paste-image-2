@@ -17,7 +17,7 @@ attachEvent = ->
       return if img.isEmpty()
 
       editor = atom.workspace.getActiveTextEditor()
-      imgName = "paste-image-#{dateformat new Date(), 'yyyy-mm-dd-HH-MM-SS'}-#{Math.random() * 1000 | 0}.png"
+      imgName = "paste-image-#{dateformat new Date(), 'yyyy-mm-dd-HH-MM-ss'}-#{Math.random() * 1000 | 0}.png"
       [range] = editor.insertText "![#{imgName}](#{imgName})"
       range = range.translate(new Point(0,2), new Point(0, -(imgName.length + 3)))
       requestAnimationFrame ->
