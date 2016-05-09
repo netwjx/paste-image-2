@@ -2,11 +2,13 @@
   "name": "paste-image-2",
   "main": "./lib/paste-image-2",
   "version": "0.3.0",
-  "description": "Paste image to markdown, to html, to xxx",
+  "description": "Paste image to markdown/html.",
   "keywords": [
     "atom",
     "package",
-    "markdown"
+    "markdown",
+    "paste",
+    "image"
   ],
   "repository": "https://github.com/netwjx/paste-image-2",
   "license": "MIT",

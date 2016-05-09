@@ -17,10 +17,21 @@ attachEvent = ->
       return if img.isEmpty()
 
       editor = atom.workspace.getActiveTextEditor()
-      imgName = "paste-image-#{dateformat new Date(), 'yyyy-mm-dd-HH-MM-ss'}-#{Math.random() * 1000 | 0}.png"
-      [range] = editor.insertText "![#{imgName}](#{imgName})"
-      range = range.translate(new Point(0,2), new Point(0, -(imgName.length + 3)))
-      requestAnimationFrame ->
-        editor.setSelectedBufferRange(range)
-      fs.writeFile join(dirname(editor.getPath()), imgName), img.toPng(), ->
-        console.info 'Ok! Image is saved'
+      grammar = editor.getGrammar()
+      if /(markdown|html)/i.test grammar.name
+        name = RegExp.$1.toLowerCase()
+        imgName = "paste-image-#{dateformat new Date(), 'yyyy-mm-dd-HH-MM-ss'}-#{Math.random() * 1000 | 0}.png"
+        fs.writeFile join(dirname(editor.getPath()), imgName), img.toPng(), ->
+          console.info 'Ok! Image is saved'
+        
+        switch name
+          when 'markdown'
+            debugger
+            [range] = editor.insertText "![#{imgName}](#{imgName})"
+            range = range.translate new Point(0,2), new Point(0, -(imgName.length + 3))
+          when 'html'
+            [range] = editor.insertText "<img src=\"#{imgName}\" alt=\"#{imgName}\" />"
+            range = range.translate new Point(0, imgName.length + 17), new Point(0, -4)
+            
+        requestAnimationFrame ->
+          editor.setSelectedBufferRange(range)
