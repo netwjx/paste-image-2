@@ -15,8 +15,7 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "dateformat": "^1.0.12",
     "text-buffer": "^8.1.4"
   }
